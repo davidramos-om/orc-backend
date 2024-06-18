@@ -1,5 +1,5 @@
 import express, { Request, Response, NextFunction } from "express";
-import tesseract from "node-tesseract-ocr";
+import tesseract, { Config } from "node-tesseract-ocr";
 import cors from "cors";
 import path from "path";
 
@@ -26,7 +26,7 @@ app.post("/upload", upload.single("image"), (req: Request, res: Response) => {
     return;
   }
 
-  const config = {
+  const config: Config = {
     lang: lang || "jpn", // Japanese characters
     oem: 1,
     psm: 3,
