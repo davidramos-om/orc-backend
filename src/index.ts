@@ -27,6 +27,7 @@ app.post("/upload", upload.single("image"), (req: Request, res: Response) => {
     return;
   }
 
+  // https://github.com/tesseract-ocr/tesseract/blob/main/doc/tesseract.1.asc
   const config: Config = {
     lang: lang || "jpn", // Japanese characters
     oem: 1,
