@@ -37,7 +37,6 @@ app.post("/upload", upload.single("image"), (req: Request, res: Response) => {
   tesseract
     .recognize(`uploads/${file}`, config)
     .then((text) => {
-      console.dir({ text });
       res.status(200).json(text);
     })
     .catch((err) => {
