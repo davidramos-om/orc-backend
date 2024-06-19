@@ -30,8 +30,8 @@ app.post("/upload", upload.single("image"), (req: Request, res: Response) => {
   // https://github.com/tesseract-ocr/tesseract/blob/main/doc/tesseract.1.asc
   const config: Config = {
     lang: lang || "jpn", // Japanese characters
-    oem: 1,
-    psm: 3,
+    oem: 1, // the engine to be used,
+    psm: 3, // fully automatic page segmentation, but no OSD. (Default)
   };
 
   tesseract
